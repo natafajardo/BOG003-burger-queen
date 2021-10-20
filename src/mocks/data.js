@@ -84,7 +84,7 @@ const menu = [
         title: "Papas a la francesa",
         price: "3500",
         category: "dia",
-        subcategory: "guarniciones",
+        subcategory: "Guarniciones",
         remove: [],
         add: [ "Salsa de tomate", "Mayonesa", "Salsa de ajo" ],
         img: "./images/papas-francesa.png"
@@ -94,7 +94,7 @@ const menu = [
         title: "Aros de cebolla",
         price: "3500",
         category: "dia",
-        subcategory: "guarniciones",
+        subcategory: "Guarniciones",
         remove: [],
         add: [ "Salsa de tomate", "Mayonesa", "Salsa de ajo" ],
         img: "./images/aros-cebolla.png"
@@ -104,7 +104,7 @@ const menu = [
         title: "Jugo de naranja",
         price: "2500",
         category: "dia",
-        subcategory: "bebidas",
+        subcategory: "Bebidas",
         remove: [],
         add: [],
         img: "./images/jugo-naranja.png"
@@ -114,7 +114,7 @@ const menu = [
         title: "Jugo de mora",
         price: "2500",
         category: "dia",
-        subcategory: "bebidas",
+        subcategory: "Bebidas",
         remove: [],
         add: [],
         img: "./images/jugo-mora.png"
@@ -124,17 +124,17 @@ const menu = [
         title: "Agua",
         price: "2000",
         category: "dia",
-        subcategory: "bebidas",
+        subcategory: "Bebidas",
         remove: [],
         add: [],
         img: "./images/agua.png"
     }, 
     {
-        id: 12,
+        id: 14,
         title: "Coca-cola",
         price: "2500",
         category: "dia",
-        subcategory: "bebidas",
+        subcategory: "Bebidas",
         remove: [],
         add: [],
         img: "./images/coca-cola.png"
