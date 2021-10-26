@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import items from "./mocks/data";
+import items from "./api/data.json";
 import './App.css';
 import Categories from "./components/Categories";
 import Subcategories from './components/Subcategories';
@@ -38,5 +38,18 @@ const App = () => {
     </div> 
   );
 }
+
+/* const getData=()=>{
+  fetch('data.json'
+  )
+    .then(function(response){
+      console.log(response)
+      return response.json();
+    })
+    .then(function(myJson) {
+      console.log(myJson);
+    });
+};
+getData(); */
 
 export default App;
