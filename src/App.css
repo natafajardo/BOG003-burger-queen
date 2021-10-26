@@ -22,3 +22,7 @@ body {
 .container main .pedido {
   flex: 3;
 }
+
+.container main .menu .sub-menu {
+  display: flex;
+}

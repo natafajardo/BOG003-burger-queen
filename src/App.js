@@ -37,13 +37,19 @@ const App = () => {
       <Header></Header>
       <main>
         <div className="menu">
-          <Categories categories={categories} activeCategory={activeCategory} filterSubcategories={filterSubcategories}/>
-          <Subcategories
-            subcategories={subcategories}
-            activeSubcategory={activeSubcategory}
-            filterItems={filterItems}
+          <Categories
+            categories={categories}
+            activeCategory={activeCategory}
+            filterSubcategories={filterSubcategories}
           />
-          {<Menu items={menuItems} />}
+          <div className="sub-menu">
+            <Subcategories
+              subcategories={subcategories}
+              activeSubcategory={activeSubcategory}
+              filterItems={filterItems}
+            />
+            {<Menu items={menuItems} />}
+          </div>
         </div>
         <div className="pedido"></div>
       </main>
