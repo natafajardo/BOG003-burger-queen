@@ -1,0 +1,11 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #537CED;
+    align-items: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 30px;
+  }

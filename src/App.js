@@ -4,7 +4,7 @@ import './App.css';
 import Categories from "./components/Categories";
 import Subcategories from './components/Subcategories';
 import Menu from './components/Menu';
-
+import Header from './components/Header/Header';
 
 const allCategories = [...new Set(items.map(item => item.category))];
 
@@ -32,13 +32,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <header className="header">
-        <div className="logout">
-          <span>CERRAR</span>
-        </div>
-        <div className="brand"></div>
-        <div className="user"></div>
-      </header>
+      <Header></Header>
       <main>
         <Categories categories={categories} activeCategory={activeCategory} filterSubcategories={filterSubcategories}/>
         <Subcategories subcategories={subcategories} activeSubcategory={activeSubcategory} filterItems={filterItems}/>
