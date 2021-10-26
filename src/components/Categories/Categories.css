@@ -1,0 +1,15 @@
+.dropdown {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 27px;
+}
+
+.dropdown .Dropdown-control {
+  background: #303038;
+  border: none;
+  color: #fff;
+}
+
+.dropdown .arrowDropdown {
+  top: 50%;
+}
+
