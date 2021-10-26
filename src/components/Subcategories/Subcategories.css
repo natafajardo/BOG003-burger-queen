@@ -1,0 +1,8 @@
+.subcategories {
+    display: flex;
+    flex-direction: column;
+}
+
+.subcategories button {
+    width: fit-content;
+}
