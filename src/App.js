@@ -31,25 +31,22 @@ const App = () => {
   }
 
   return (
-    <div>
-      <Categories categories={categories} activeCategory={activeCategory} filterSubcategories={filterSubcategories}/>
-      <Subcategories subcategories={subcategories} activeSubcategory={activeSubcategory} filterItems={filterItems}/>
-      {<Menu items={menuItems}/>}
-    </div> 
+    <div className="container">
+      <header className="header">
+        <div className="logout">
+          <span>CERRAR</span>
+        </div>
+        <div className="brand"></div>
+        <div className="user"></div>
+      </header>
+      <main>
+        <Categories categories={categories} activeCategory={activeCategory} filterSubcategories={filterSubcategories}/>
+        <Subcategories subcategories={subcategories} activeSubcategory={activeSubcategory} filterItems={filterItems}/>
+        {<Menu items={menuItems}/>}
+      </main>
+    </div>
   );
 }
 
-/* const getData=()=>{
-  fetch('data.json'
-  )
-    .then(function(response){
-      console.log(response)
-      return response.json();
-    })
-    .then(function(myJson) {
-      console.log(myJson);
-    });
-};
-getData(); */
 
 export default App;
