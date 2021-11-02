@@ -11,7 +11,7 @@ const Subcategories = ({ subcategories, activeSubcategory, filterItems }) => {
                     className={`${activeSubcategory === subcategory ? "filter-btn active" : "filter-btn"}`}
                     key={index}
                     onClick={() => filterItems(subcategory)}
-                    ><img src={`./images/subcategories/${subcategory}.png`} alt={subcategory} width="80" height="80"/></button>
+                    ><img src={`./images/subcategories/${subcategory}.png`} alt={subcategory} width="90" height="90"/></button>
                 )
             })}  
         </div>
