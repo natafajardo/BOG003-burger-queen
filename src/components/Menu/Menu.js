@@ -1,15 +1,15 @@
+
 import React from 'react'
+import './Menu.css';
 
 const Menu = ({ items }) => {
     return (
-        <div>
+        <div className="menu-list" >
              {items.map(item => {
-                 const { id, title, price, img } = item;
+                 const { id, title } = item;
                  return (
                      <article key={id} className="menu-item">
-                         <img src={img} className="photo" width="150" alt={title}/>
-                     <h4>{title}</h4>
-                     <h4>{price}</h4>
+                     <button>{title}</button>
                      </article>
                  )
              })} 

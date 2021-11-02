@@ -1,0 +1,15 @@
+.menu-list {
+ display: flex;
+}
+
+.menu-list button {
+ font-family: "Ropa Sans";
+ background-color: rgba(58, 29, 137, 0.62);;
+ color: rgba(255, 255, 234, 0.73);
+ width: 100px;
+ height: 100px;
+ border: none;
+ margin: 2px 2px 2px 3px;
+ font-size: 12pt;
+}
+

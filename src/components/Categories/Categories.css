@@ -1,12 +1,13 @@
 .dropdown {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-size: 27px;
+  font-family: "Ropa Sans";
+  font-size: 16pt;
 }
 
 .dropdown .Dropdown-control {
   background: #303038;
   border: none;
   color: #fff;
+  width: 90%;
 }
 
 .dropdown .arrowDropdown {

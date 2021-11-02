@@ -5,4 +5,7 @@
 
 .subcategories button {
     width: fit-content;
+    background-color: #232429;
+    border:none;
+    margin: 2px 0px 2px 0px;
 }

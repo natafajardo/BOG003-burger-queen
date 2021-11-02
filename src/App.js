@@ -4,7 +4,7 @@ import "./App.css";
 // import Categories from "./components/Categories";
 import Categories from "./components/Categories/Categories";
 import Subcategories from "./components/Subcategories/Subcategories";
-import Menu from "./components/Menu";
+import Menu from "./components/Menu/Menu";
 import Header from "./components/Header/Header";
 
 const allCategories = [...new Set(items.map((item) => item.category))];
