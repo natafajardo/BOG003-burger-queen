@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import items from "./api/data.json";
+import items from "./api/data.json"
+import dataTables from "./api/tables.json"
 import "./App.css";
-// import Categories from "./components/Categories";
 import Categories from "./components/Categories/Categories";
 import Subcategories from "./components/Subcategories/Subcategories";
-import Menu from "./components/Menu";
+import Menu from "./components/Menu/Menu";
 import Header from "./components/Header/Header";
+import CustomOrder from "./components/CustomOrder/CustomOrder";
 
 const allCategories = [...new Set(items.map((item) => item.category))];
+const allTables = dataTables.map(dataTables => dataTables.table);
 
 const App = () => {
   const [categories, setCategories] = useState(allCategories);
@@ -15,13 +17,14 @@ const App = () => {
   const [subcategories, setSubcategories] = useState([]);
   const [activeSubcategory, setActiveSubcategory] = useState("");
   const [menuItems, setMenuItems] = useState([]);
+  const [tables, setTables] = useState([]);
+  const [placeholder, setPlaceholder] = useState("Selecciona una mesa");
+  const [idProduct, setIdProduct] = useState("");
 
   const filterSubcategories = (category) => {
     setActiveCategory(category);
     const categoryItems = items.filter((item) => item.category === category);
-    const currentSubcategory = [
-      ...new Set(categoryItems.map((item) => item.subcategory)),
-    ];
+    const currentSubcategory = [...new Set(categoryItems.map((item) => item.subcategory))];
     setSubcategories(currentSubcategory);
     return;
   };
@@ -32,15 +35,23 @@ const App = () => {
     setMenuItems(newItems);
   };
 
+  const changePlaceholder = (table) => {
+    setPlaceholder(table);
+  }
+
+  const prueba = (id) =>{
+    setIdProduct(id);
+  }
+
   return (
     <div className="container">
       <Header></Header>
       <main>
         <div className="menu">
           <Categories
-            categories={categories}
-            activeCategory={activeCategory}
-            filterSubcategories={filterSubcategories}
+            items={categories}
+            dPlaceholder={"Selecciona un menú"}
+            filterItems={filterSubcategories}
           />
           <div className="sub-menu">
             <Subcategories
@@ -48,10 +59,17 @@ const App = () => {
               activeSubcategory={activeSubcategory}
               filterItems={filterItems}
             />
-            {<Menu items={menuItems} />}
+            {<Menu items={menuItems} prueba={prueba}/>}
+            <CustomOrder id={idProduct} />
           </div>
         </div>
-        <div className="pedido"></div>
+        <div className="pedido">
+          <Categories
+            items={allTables}
+            dPlaceholder={placeholder}
+            filterItems={changePlaceholder}
+          />
+        </div>
       </main>
     </div>
   );

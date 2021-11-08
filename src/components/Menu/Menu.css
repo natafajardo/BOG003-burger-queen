@@ -1,0 +1,20 @@
+.menu-list {
+ display: flex;
+ padding-left: 4px;
+}
+
+.menu-list button {
+ font-family: "Ropa Sans";
+ background-color: rgba(58, 29, 137, 0.62);;
+ color: rgba(255, 255, 234, 0.73);
+ width: 115px;
+ height: 115px;
+ border: none;
+ margin: 2px 2px 2px 3px;
+ font-size: 14pt;
+}
+
+.container main .menu .sub-menu {
+    display: flex;
+    padding-left: 6px;
+}

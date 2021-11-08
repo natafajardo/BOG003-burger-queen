@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;500&family=Ropa+Sans&display=swap");
 
 body {
-  background: #232429;
+  background: #000000;
 }
 .container {
   display: flex;
@@ -13,6 +13,7 @@ body {
   display: flex;
   padding: 10px;
   font-family: "Ropa Sans", sans-serif;
+  color: white;
 }
 
 .container main .menu {
