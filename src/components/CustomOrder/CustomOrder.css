@@ -1,0 +1,31 @@
+.style-space {
+  height: 2px;
+  width: 100%;
+  background: #000000;
+}
+
+
+.styleDivGradient {
+  background: linear-gradient(170.74deg, #84EADD 14.03%, #55A6D9 38.37%, #4D7DAF 54.97%, #5B5488 73.23%, #534367 90.74%);
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  font-family: 'Ropa Sans';
+  border-radius: 10px;
+}
+
+.orderRow {
+  display: flex;
+  flex-direction: row;
+/*   justify-content: space-evenly;
+  align-items: baseline; */
+  gap:20px;
+}
+
+/* .orderRow p {
+  padding-right: 5px;
+} */
