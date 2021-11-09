@@ -1,7 +1,7 @@
 import React from 'react'
 import product from '../../api/data.json'
 
-const CustomOrder = ({id}) => {
+const CustomOrder = ({id, setToogleOrder, firstTitle, data }) => {
     const style = {
         height: '2px',
         width: '100%',
@@ -25,31 +25,34 @@ const CustomOrder = ({id}) => {
     const direction = {
         flexDirection: 'row'
     }
+    console.log(data);
     return (
         <div style={styleDivGradient} onClick={() => {showId(id)}}>
             <div>
-            <h3>SANDWICH JAMÓN Y QUESO</h3>
-            <img src="./images/sandwichJamonQueso.png" alt="logo" />
+            <h3>{firstTitle}</h3>
+            <img src={data[0].img} alt={data[0].title}/>
             </div>
             <div style={style}></div>
             <h3>INGREDIENTES</h3>
             <div style={direction} >
-            <p>PAN FRANCÉS</p>
-            <p>JAMÓN DE PAVO</p>
-            <p>QUESO AMERICANO</p>
-            <p>SALSA DE AJO</p>
+            {data[0].remove.map(item =>{
+                return (<p>{item.toUpperCase()}</p>)
+            })}
             </div>
             <div style={style}></div>
             <h3>ADICIONALES</h3>
             <div style={direction}>
-            <p>QUESO</p>
-            <p>HUEVO</p>
+            {data[0].add.map(item =>{
+                return (<p>{item.toUpperCase()}</p>)
+            })}
             </div>
             <div style={style}></div>
             <div>MAS Y MENOS</div>
             <div style={style}></div>
             <div>
-            <button>OK <img src="./images/ok.png" alt="confirmar" /> </button>
+            <button onClick={() => {
+                setToogleOrder(false) 
+            }}>OK <img src="./images/ok.png" alt="confirmar" /> </button>
             </div>
         </div>
     )

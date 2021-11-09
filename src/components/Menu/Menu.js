@@ -1,18 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react';
 import './Menu.css';
 
-const Menu = ({ items, prueba }) => {
-    const handlePrueba = (id) => {
+const Menu = ({ items, setToogleOrder, buttonsVisible, setItemTitle}) => {
+/*     const handlePrueba = (id) => {
         prueba(id)
-    }
+    } */
     return (
-        <div className="menu-list" >
+        <div className={buttonsVisible ? "menu-list-visible" : "menu-list-no-visible"} >
              {items.map(item => {
                  const { id, title } = item;
-                 console.log(id)
+                 console.log("menu", id)
                  return (
-                     <article key={id} className="menu-item">
-                     <button onClick={() => {handlePrueba(id)}}>{title}</button>
+                     <article key={id}>
+                       <button onClick={() => {
+                        setItemTitle(title)
+                        setToogleOrder(true)
+                       }}>
+                         {title}
+                       </button>
                      </article>
                  )
              })}
