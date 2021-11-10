@@ -7,12 +7,12 @@
 
 .styleDivGradient {
   background: linear-gradient(170.74deg, #84EADD 14.03%, #55A6D9 38.37%, #4D7DAF 54.97%, #5B5488 73.23%, #534367 90.74%);
-  width: 100%;
+  width: 57%;
   padding: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   color: white;
   font-family: 'Ropa Sans';
   border-radius: 10px;
@@ -32,6 +32,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   width: 100%;
+  position: relative;
 }
 
 .closeOrder {
@@ -42,6 +43,9 @@
   color: white;
   border: none;
   background-color: unset;
+  position: absolute;
+  left: 2%;
+  top: 8%;
 }
 
 .titleOrder{
@@ -55,3 +59,31 @@
   margin-bottom: 20px;
   font-size: 18pt;
 }
+
+.btnCloseCustom {
+  background: none;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.btnCustom {
+  background-color:none;
+  border:none;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 12pt;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.btnCustomImg {
+  width: 15px;
+  margin-top: 15px;
+  margin-right: 5px;
+
+}
+
