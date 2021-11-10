@@ -57,8 +57,8 @@
     "price": "2000",
     "category": "DESAYUNO",
     "subcategory": "Bebidas-calientes",
-    "remove": [],
-    "add": [],
+    "remove": ["azúcar"],
+    "add": ["stevia"],
     "img": "./images/chocolate.png"
   },
   {
@@ -67,8 +67,8 @@
     "price": "2000",
     "category": "DESAYUNO",
     "subcategory": "Bebidas-calientes",
-    "remove": [],
-    "add": [],
+    "remove": ["azúcar"],
+    "add": ["stevia"],
     "img": "./images/cafe.png"
   },
   {
@@ -77,8 +77,8 @@
     "price": "2000",
     "category": "DESAYUNO",
     "subcategory": "Bebidas-calientes",
-    "remove": [],
-    "add": [],
+    "remove": ["azúcar"],
+    "add": ["stevia"],
     "img": "./images/cafe-americano.png"
   },
   {
@@ -155,8 +155,8 @@
     "price": "2500",
     "category": "COMIDAS RÁPIDAS",
     "subcategory": "Bebidas",
-    "remove": [],
-    "add": [],
+    "remove": ["azúcar"],
+    "add": ["stevia"],
     "img": "./images/jugo-naranja.png"
   },
   {
@@ -165,8 +165,8 @@
     "price": "2500",
     "category": "COMIDAS RÁPIDAS",
     "subcategory": "Bebidas",
-    "remove": [],
-    "add": [],
+    "remove": ["azúcar"],
+    "add": ["stevia"],
     "img": "./images/jugo-mora.png"
   },
   {

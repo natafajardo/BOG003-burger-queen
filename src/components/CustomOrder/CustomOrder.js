@@ -1,16 +1,19 @@
 import React from 'react';
 import product from '../../api/data.json';
 import './CustomOrder.css';
-const CustomOrder = ({ id, setToogleOrder, firstTitle, data }) => {
-    const showId = (id) => {
-        console.log("showid", id);
-    }
+import BtnAdd from '../Button/BtnAdd';
 
-    console.log(data);
+const CustomOrder = ({ setToogleOrder, firstTitle, data }) => {
+
     return (
-        <div className="styleDivGradient" onClick={() => { showId(id) }}>
+        <div className="styleDivGradient">
+            <div className= "closeCustomeOrder">
+                {<button className="closeOrder" onClick={() => {
+                    setToogleOrder(false)
+                }}>X</button>}
+                <h3 className="titleOrder">{firstTitle.toUpperCase()}</h3>
+            </div>
             <div>
-                <h3>{firstTitle}</h3>
                 <img src={data[0].img} alt={data[0].title} />
             </div>
             <div className="style-space"></div>
@@ -28,7 +31,11 @@ const CustomOrder = ({ id, setToogleOrder, firstTitle, data }) => {
                 })}
             </div>
             <div className="style-space" ></div>
-            <div>MAS Y MENOS</div>
+            <div className="additions">
+                <BtnAdd content={"+"} />
+                <span> 1 </span>
+                <BtnAdd content={"-"} />
+            </div>
             <div className="style-space"></div>
             <div>
                 <button onClick={() => {

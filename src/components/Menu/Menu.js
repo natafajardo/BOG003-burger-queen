@@ -2,9 +2,6 @@ import React,{useState} from 'react';
 import './Menu.css';
 
 const Menu = ({ items, setToogleOrder, buttonsVisible, setItemTitle}) => {
-/*     const handlePrueba = (id) => {
-        prueba(id)
-    } */
     return (
         <div className={buttonsVisible ? "menu-list-visible" : "menu-list-no-visible"} >
              {items.map(item => {
