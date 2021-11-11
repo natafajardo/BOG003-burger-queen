@@ -11,7 +11,7 @@
 .menu-list-visible button {
  font-family: "Ropa Sans";
  background-color: rgba(58, 29, 137, 0.62);;
- color: rgba(255, 255, 234, 0.73);
+ color: rgb(255, 255, 234);
  width: 115px;
  height: 115px;
  border: none;
@@ -22,7 +22,7 @@
 .menu-list-no-visible  button {
  font-family: "Ropa Sans";
  background-color: rgba(58, 29, 137, 0.62);;
- color: rgba(255, 255, 234, 0.73);
+ color: rgb(255, 255, 234);
  width: 115px;
  height: 115px;
  border: none;

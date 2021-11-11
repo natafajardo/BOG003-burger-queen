@@ -1,9 +1,11 @@
 import React from 'react';
-import product from '../../api/data.json';
+import { useState } from 'react';
 import './CustomOrder.css';
 import BtnAdd from '../Button/BtnAdd';
 
-const CustomOrder = ({ setToogleOrder, firstTitle, data }) => {
+const CustomOrder = ({ setToogleOrder, firstTitle, data, onClickOk }) => {
+
+  const [count, setCount] = useState(1);
 
     return (
         <div className="styleDivGradient">
@@ -20,7 +22,12 @@ const CustomOrder = ({ setToogleOrder, firstTitle, data }) => {
             <h3>INGREDIENTES</h3>
             <div className= "orderRow">
                 {data[0].remove.map(item => {
-                  return (<p>{item.toUpperCase()}</p>)
+                  return (
+                    <div>
+                      <input type="checkbox" checked value={item} onClick={()=>{}} />
+                      <p>{item.toUpperCase()}</p>
+                    </div>
+                  )
                 })}
             </div>
             <div className="style-space" ></div>
@@ -32,14 +39,21 @@ const CustomOrder = ({ setToogleOrder, firstTitle, data }) => {
             </div>
             <div className="style-space" ></div>
             <div className="additions">
-                <BtnAdd content={"+"} />
-                <span> 1 </span>
-                <BtnAdd content={"-"} />
+              <div className="circleAdd" onClick={ ()=>{count>1 && setCount(count-1)} }>
+                <p className="content"> {"-"} </p>
+              </div>
+                <span> {count} </span>
+              <div className="circleAdd" onClick={ ()=>{setCount(count+1)} } >
+                <p className="content"> {"+"} </p>
+              </div>
             </div>
             <div className="style-space"></div>
             <div className="btnCloseCustom">
               <button className="btnCustom" onClick={() => {
-                  setToogleOrder(false)
+                  /* const product = {...data[0]}
+                  product.remove =  */
+                  onClickOk(count/* , product */);
+                  setToogleOrder(false);
               }}>
                 <img className="btnCustomImg" src="./images/ok.png" alt="confirmar"/>
                 <p>OK</p>

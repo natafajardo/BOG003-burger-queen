@@ -22,6 +22,7 @@ const App = () => {
   const [idProduct, setIdProduct] = useState("");
   const [itemTitle, setItemTitle] = useState("");
   const [toogleOrder, setToogleOrder] = useState(false);
+  const [order, setOrder] = useState([]);
 
   const filterSubcategories = (category) => {
     setActiveCategory(category);
@@ -41,16 +42,16 @@ const App = () => {
     setPlaceholder(table);
   }
 
-  const prueba = (id) =>{
-    setIdProduct(id);
-    console.log("app", idProduct);
-  }
-
   const filterData = (item) =>{
     if (item.title === itemTitle){
       return item
     }
   }
+
+  const onClickOk = (count, product) => {
+
+  }
+
 
   return (
     <div className="container">
@@ -69,8 +70,8 @@ const App = () => {
               filterItems={filterItems}
             />
             <Menu items={menuItems} buttonsVisible={!toogleOrder} setToogleOrder={setToogleOrder} setItemTitle={setItemTitle}/>
-            {toogleOrder ? <CustomOrder id={idProduct} setToogleOrder={setToogleOrder} firstTitle={itemTitle} data={items.filter(item => filterData(item))}/> : null}
-  
+            {toogleOrder ? <CustomOrder id={idProduct} setToogleOrder={setToogleOrder}
+            firstTitle={itemTitle} data={items.filter(item => filterData(item))} onClickOk={onClickOk} setOrder={setOrder} /> : null}
           </div>
         </div>
         <div className="pedido">
