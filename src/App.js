@@ -7,6 +7,8 @@ import Subcategories from "./components/Subcategories/Subcategories";
 import Menu from "./components/Menu/Menu";
 import Header from "./components/Header/Header";
 import CustomOrder from "./components/CustomOrder/CustomOrder";
+import ButtonAddOrder from "./components/ButtonAddOrder/ButtonAddOrder";
+
 
 const allCategories = [...new Set(items.map((item) => item.category))];
 const allTables = dataTables.map(dataTables => dataTables.table);
@@ -23,6 +25,7 @@ const App = () => {
   const [itemTitle, setItemTitle] = useState("");
   const [toogleOrder, setToogleOrder] = useState(false);
   const [order, setOrder] = useState([]);
+  const [btnOrderCocina,setBtnOrderCocina] = useState([])
 
   const filterSubcategories = (category) => {
     setActiveCategory(category);
@@ -53,6 +56,8 @@ const App = () => {
   }
 
 
+
+
   return (
     <div className="container">
       <Header></Header>
@@ -80,6 +85,9 @@ const App = () => {
             dPlaceholder={placeholder}
             filterItems={changePlaceholder}
           />
+          <aside>
+            <ButtonAddOrder message={"Joan Te amo"}/>
+          </aside>
         </div>
       </main>
     </div>

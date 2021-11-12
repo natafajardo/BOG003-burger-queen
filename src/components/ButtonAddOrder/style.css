@@ -1,0 +1,22 @@
+.btnOrderCocina {
+  height: 80px;
+  background: #ffffff;
+  width: 70%;
+  background: #303038;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  border:none;
+}
+
+.btnOrderCocina:hover {
+  background-color: #537CED;
+}
+
+.btnOrderCocina h1 {
+  color:white;
+}
+
+
+
