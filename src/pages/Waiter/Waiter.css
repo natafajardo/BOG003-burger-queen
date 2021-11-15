@@ -1,3 +1,25 @@
-.Waiter {
-  color: #fff;
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container main {
+  display: flex;
+  font-family: "Ropa Sans", sans-serif;
+  color: white;
+}
+
+.container main .menu {
+  flex: 5;
+  padding: 0 30px;
+}
+
+.container main .pedido {
+  flex: 3;
+  padding: 0 30px;
+}
+
+.container main .menu .sub-menu {
+  display: flex;
+  margin-top: 5px;
 }
