@@ -11,17 +11,18 @@ body {
 
 .container main {
   display: flex;
-  padding: 10px;
   font-family: "Ropa Sans", sans-serif;
   color: white;
 }
 
 .container main .menu {
   flex: 5;
+  padding: 0 30px;
 }
 
 .container main .pedido {
   flex: 3;
+  padding: 0 30px;
 }
 
 .container main .menu .sub-menu {

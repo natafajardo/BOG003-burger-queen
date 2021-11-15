@@ -1,13 +1,14 @@
 .btnOrderCocina {
   height: 80px;
   background: #ffffff;
-  width: 70%;
+  width: 100%;
   background: #303038;
   display: flex;
   flex-flow: row;
   justify-content: center;
   align-items: center;
   border:none;
+  cursor: pointer;
 }
 
 .btnOrderCocina:hover {

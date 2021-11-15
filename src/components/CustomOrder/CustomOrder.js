@@ -1,14 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import './CustomOrder.css';
-import BtnAdd from '../Button/BtnAdd';
 
 const CustomOrder = ({ setToogleOrder, firstTitle, data, onClickOk }) => {
 
   const [count, setCount] = useState(1);
 
     return (
-        <div className="styleDivGradient">
+        <div className="custom-order">
             <div className= "closeCustomeOrder">
               {<button className="closeOrder" onClick={() => {
                 setToogleOrder(false)
@@ -19,22 +18,24 @@ const CustomOrder = ({ setToogleOrder, firstTitle, data, onClickOk }) => {
                 <img src={data[0].img} alt={data[0].title} />
             </div>
             <div className="style-space"></div>
-            <h3>INGREDIENTES</h3>
-            <div className= "orderRow">
-                {data[0].remove.map(item => {
+            <h4 className="title">INGREDIENTES</h4>
+            <ul className="list">
+                {data[0].remove.map((item, index) => {
                   return (
-                    <div>
-                      <input type="checkbox" checked value={item} onClick={()=>{}} />
+                    <li key={index}>{item.toUpperCase()}</li>
+                  )
+                })}
+            </ul>
+            <div className="style-space" ></div>
+            <h4 className="title">ADICIONAR</h4>
+            <div className= "orderRow" >
+                {data[0].add.map((item, index) => {
+                  return (
+                  <div className="recipe-items" key={index}>
+                      <input type="checkbox" value={item} onChange={()=>{}} />
                       <p>{item.toUpperCase()}</p>
                     </div>
                   )
-                })}
-            </div>
-            <div className="style-space" ></div>
-            <h3>ADICIONALES</h3>
-            <div className= "orderRow" >
-                {data[0].add.map(item => {
-                  return (<p>{item.toUpperCase()}</p>)
                 })}
             </div>
             <div className="style-space" ></div>

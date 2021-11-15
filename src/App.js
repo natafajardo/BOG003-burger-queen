@@ -75,8 +75,13 @@ const App = () => {
               filterItems={filterItems}
             />
             <Menu items={menuItems} buttonsVisible={!toogleOrder} setToogleOrder={setToogleOrder} setItemTitle={setItemTitle}/>
-            {toogleOrder ? <CustomOrder id={idProduct} setToogleOrder={setToogleOrder}
-            firstTitle={itemTitle} data={items.filter(item => filterData(item))} onClickOk={onClickOk} setOrder={setOrder} /> : null}
+            {toogleOrder ?
+            <CustomOrder
+              id={idProduct}
+              setToogleOrder={setToogleOrder}
+              firstTitle={itemTitle}
+              data={items.filter(item => filterData(item))}
+              onClickOk={onClickOk} setOrder={setOrder} /> : null}
           </div>
         </div>
         <div className="pedido">

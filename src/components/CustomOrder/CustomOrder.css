@@ -1,14 +1,18 @@
+h4, ul {
+  margin: 0;
+}
+
 .style-space {
   height: 2px;
   width: 100%;
   background: #000000;
 }
 
-
-.styleDivGradient {
+.custom-order {
   background: linear-gradient(170.74deg, #84EADD 14.03%, #55A6D9 38.37%, #4D7DAF 54.97%, #5B5488 73.23%, #534367 90.74%);
-  width: 57%;
+  width: 100%;
   padding: 0px;
+  margin-left: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,12 +22,24 @@
   border-radius: 10px;
 }
 
+.title {
+  margin: 10px 0;
+}
+
+.list {
+  margin: 10px 0;
+  width: -webkit-fill-available;
+}
+
 .orderRow {
   display: flex;
-  flex-direction: row;
-/*   justify-content: space-evenly;
-  align-items: baseline; */
-  gap:20px;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.orderRow .recipe-items {
+  text-align: center;
 }
 
 .closeCustomeOrder{
@@ -46,6 +62,7 @@
   position: absolute;
   left: 2%;
   top: 8%;
+  cursor: pointer;
 }
 
 .titleOrder{
@@ -78,6 +95,7 @@
   flex-flow: row;
   justify-content: center;
   margin-right: 30px;
+  cursor: pointer;
 }
 
 .btnCustomImg {
