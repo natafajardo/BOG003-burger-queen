@@ -1,0 +1,118 @@
+h4, ul {
+  margin: 0;
+}
+
+.style-space {
+  height: 2px;
+  width: 100%;
+  background: #000000;
+}
+
+.custom-order {
+  background: linear-gradient(170.74deg, #84EADD 14.03%, #55A6D9 38.37%, #4D7DAF 54.97%, #5B5488 73.23%, #534367 90.74%);
+  width: 100%;
+  padding: 0px;
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Ropa Sans';
+  border-radius: 10px;
+}
+
+.title {
+  margin: 10px 0;
+}
+
+.list {
+  margin: 10px 0;
+  width: -webkit-fill-available;
+}
+
+.orderRow {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.orderRow .recipe-items {
+  text-align: center;
+}
+
+.closeCustomeOrder{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.closeOrder {
+  align-self: flex-start;
+  font-family: 'Ropa Sans';
+  font-weight: bold;
+  font-size: 18pt;
+  color: white;
+  border: none;
+  background-color: unset;
+  position: absolute;
+  left: 2%;
+  top: 8%;
+  cursor: pointer;
+}
+
+.titleOrder{
+  align-items: center;
+}
+
+.additions{
+  display: flex;
+  gap:20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18pt;
+}
+
+.btnCloseCustom {
+  background: none;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.btnCustom {
+  background-color:none;
+  border:none;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 12pt;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.btnCustomImg {
+  width: 15px;
+  margin-top: 15px;
+  margin-right: 5px;
+
+}
+
+.circleAdd{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24pt;
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 2px 5px 5px rgb(52 3 45 / 27%);
+}

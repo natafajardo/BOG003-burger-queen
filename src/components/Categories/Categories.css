@@ -1,0 +1,40 @@
+.dropdown {
+  font-family: "Ropa Sans";
+  font-size: 16pt;
+  border:none;
+  padding-top: 30px;
+  padding-bottom: 7px;
+}
+
+.Dropdown-menu {
+  border-color: black;
+  width: 100%;
+  width: 70%;
+}
+
+.Dropdown-arrow {
+  right: 6%;
+  border-color: #ffffff transparent transparent;
+  border-style: solid;
+}
+
+.dropdown .Dropdown-control {
+  background: #303038;
+  border: none;
+  color: #fff;
+  padding: 14px 30px 14px 11px;
+}
+
+.Dropdown-option.is-selected {
+  background-color:#303038;
+  color: #fff;
+  border:none;
+}
+
+.dropdown .arrowDropdown {
+  top: 50%;
+}
+
+.Dropdown-option:hover {
+  background-color: #537CED;
+}

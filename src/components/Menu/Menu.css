@@ -1,0 +1,37 @@
+.menu-list-visible {
+ display: flex;
+ padding-left: 4px;
+}
+
+.menu-list-no-visible {
+    display: none;
+    padding-left: 4px;
+}
+
+.menu-list-visible button {
+ font-family: "Ropa Sans";
+ background-color: rgba(58, 29, 137, 0.62);;
+ color: rgb(255, 255, 234);
+ width: 115px;
+ height: 115px;
+ border: none;
+ margin: 2px 2px 2px 3px;
+ font-size: 14pt;
+ cursor: pointer;
+}
+
+.menu-list-no-visible  button {
+ font-family: "Ropa Sans";
+ background-color: rgba(58, 29, 137, 0.62);;
+ color: rgb(255, 255, 234);
+ width: 115px;
+ height: 115px;
+ border: none;
+ margin: 2px 2px 2px 3px;
+ font-size: 14pt;
+}
+
+/* .container main .menu .sub-menu {
+    display: flex;
+    padding-left: 6px;
+} */
