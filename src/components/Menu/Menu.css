@@ -1,5 +1,6 @@
 .menu-list-visible {
  display: flex;
+ flex-flow: row wrap;
  padding-left: 4px;
 }
 
