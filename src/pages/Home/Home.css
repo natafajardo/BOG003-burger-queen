@@ -1,0 +1,30 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+}
+
+.Home .brand {
+  margin-bottom: 100px;
+}
+
+.Home .brand img {
+  width: 300px;
+}
+
+.Home .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Home .buttons .home-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.Home .buttons .home-button img {
+  width: 200px;
+}
