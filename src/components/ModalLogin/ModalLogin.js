@@ -1,17 +1,20 @@
-import React, {useState} from 'react'
-import './ModalLogin.css'
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import React, {useState} from 'react';
+import './ModalLogin.css';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import firebase from "../../config/firebase";
 
 
 const ModalLogin = ({ showModal, setShowModal }) => {
 
     const [valueName, setValueName] = useState('');
+    const [valueEmail, setValueEmail] = useState('');
+    const [valuePassword, setValuePassword] = useState('');
     const [showForm, setShowForm] = useState(false);
 
     const auth = () => {
-        /* createUserWithEmailAndPassword(valueName) */
+        
         console.log(valueName);
     }
 
@@ -45,7 +48,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                             Enviar
                         </Button>
                     </Form>
-                    <p onClick={() => {setShowForm(false)}}> Si ya estás registrado haz click aquí</p>
+                    <p onClick={() => {setShowForm(false)}} className="linkModal"> Si ya estás registrado haz click aquí</p>
                 </Modal.Body>
                 <Modal.Body className={showForm ? "formLoginNoVisible" : "formLoginVisible"}>
                     <Modal.Header onClick={() => setShowModal(false)} closeButton>
@@ -64,7 +67,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                         Enviar
                         </Button>
                     </Form>
-                    <p onClick={() => {setShowForm(true)}}> Si no estás registrado haz click aquí</p>
+                    <p onClick={() => {setShowForm(true)}} className="linkModal"> Si no estás registrado haz click aquí</p>
                 </Modal.Body>
             </Modal.Dialog>
         </Modal>
