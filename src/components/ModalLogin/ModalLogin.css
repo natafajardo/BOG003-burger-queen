@@ -1,0 +1,38 @@
+.formRegisterVisible{
+    display: flex;
+    flex-direction: column;
+}
+.formRegisterNoVisible{
+    display: none;
+    flex-direction: column;
+}
+.formLoginVisible{
+    display: flex;
+    flex-direction: column;
+}
+.formLoginNoVisible{
+    display: none;
+    flex-direction: column;
+}
+.modal-content{
+    background-color: #140D2F;
+    color: rgb(255, 255, 255);
+}
+.form-control{
+    background-color: #241743;
+    border-color: transparent;
+    border-radius: 10px;
+}
+.btn-primary{
+    background-color: #160E31;
+}
+.btn-close{
+    background-color: #241743;
+}
+p{
+    padding: 5px;
+    cursor: pointer;
+    font-size: 10pt;
+    color: #606574;
+
+}
