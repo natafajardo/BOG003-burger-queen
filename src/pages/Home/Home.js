@@ -13,7 +13,7 @@ const Home = () => {
       </div>
       <div className="buttons">
         <Link to="/kitchen">
-        <button className="home-button">
+          <button className="home-button">
             <img src="./images/Chef.png" alt="chef" />
           </button>
         </Link>

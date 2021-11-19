@@ -36,3 +36,7 @@ p{
     color: #606574;
 
 }
+
+.modal-backdrop.show {
+    opacity: .83;
+}
