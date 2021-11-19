@@ -12,6 +12,8 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 const ModalLogin = ({ showModal, setShowModal }) => {
 
     const [valueName, setValueName] = useState('');
+    const [valueEmail, setValueEmail] = useState('');
+    const [valuePassword, setValuePassword] = useState('');
     const [showForm, setShowForm] = useState(false);
     const [emailUser, setEmailUser] = useState('');
     const [passwordUser, setPasswordUser] = useState('');
