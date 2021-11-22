@@ -10,6 +10,7 @@ import Menu from "../../components/Menu/Menu";
 import Header from "../../components/Header/Header";
 import CustomOrder from "../../components/CustomOrder/CustomOrder";
 import ButtonAddOrder from "../../components/ButtonAddOrder/ButtonAddOrder";
+import OrderList from "../../components/OrderList/OrderList";
 
 
 const allCategories = [...new Set(items.map((item) => item.category))];
@@ -79,7 +80,7 @@ const Waiter = () => {
               id={idProduct}
               setToogleOrder={setToogleOrder}
               firstTitle={itemTitle}
-              data={items.filter(item => filterData(item))}
+              items={items.filter(item => filterData(item))}
               onClickOk={onClickOk} setOrder={setOrder} /> : null}
           </div>
         </div>
@@ -90,6 +91,7 @@ const Waiter = () => {
             filterItems={changePlaceholder}
           />
           <aside>
+            <OrderList></OrderList>
             <ButtonAddOrder message={"Joan Te amo"}/>
           </aside>
         </div>

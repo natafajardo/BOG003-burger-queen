@@ -33,6 +33,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                 const errorMessage = error.message;
                 console.log(error);
                 // ..
+                
             });
     }
 
@@ -45,6 +46,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                 // Signed in
                 const user = userCredential.user;
                 console.log(user, "logueo");
+                window.location.pathname= '/tables';
                 // ...
             })
             .catch((error) => {
