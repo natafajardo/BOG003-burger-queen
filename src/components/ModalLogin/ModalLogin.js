@@ -49,7 +49,8 @@ const ModalLogin = ({ showModal, setShowModal }) => {
             })
             .catch((error) => {
                 console.log(error);
-                switch (error) {
+                const loginError = error.code;
+                switch (loginError) {
                     case 'auth/wrong-password':
                         //setErr('La contraseña no es válida!');
                         console.log('No es la contraseña{err}');
@@ -62,6 +63,11 @@ const ModalLogin = ({ showModal, setShowModal }) => {
 
                     case 'auth/invalid-email':
                         setErr('No corresponde a un correo electrónico!');
+                        console.log({err});
+                        break;
+
+                    case 'auth/too-many-requests':
+                        setErr('Muchas solicitudes erroneas!');
                         console.log({err});
                         break;
 
