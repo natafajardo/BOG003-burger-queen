@@ -1,4 +1,5 @@
 .btnOrderCocina {
+  font-size: 30pt;
   height: 80px;
   background: #ffffff;
   width: 100%;
@@ -17,6 +18,11 @@
 
 .btnOrderCocina h1 {
   color:white;
+}
+
+.titleBtn{
+  font-size: 20pt;
+  color: white;
 }
 
 

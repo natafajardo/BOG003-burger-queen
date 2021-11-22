@@ -8,7 +8,7 @@ const ButtonAddOrder = ({ message }) => {
       alert(message)
     }}>
       <img className="btnOrderCocinaImg" src="./images/imgButtonAddOrder.png" alt="imgButtonAddOrderImg" />
-      <h1>ENVIAR PEDIDO A COCINA</h1>
+      <p className="titleBtn">ENVIAR PEDIDO A COCINA</p>
     </button>
 
   )

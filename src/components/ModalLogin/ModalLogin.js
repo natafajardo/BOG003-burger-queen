@@ -106,7 +106,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                             Enviar
                         </Button>
                     </Form>
-                    <p onClick={() => { setShowForm(false) }}> Si ya estás registrado haz click aquí</p>
+                    <p className="linkToogle" onClick={() => { setShowForm(false) }}> Si ya estás registrado haz click aquí</p>
                 </Modal.Body>
                 <Modal.Body className={showForm ? "formLoginNoVisible" : "formLoginVisible"}>
                     <Modal.Header onClick={() => setShowModal(false)} closeButton>
@@ -127,7 +127,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                             </Button>
                         </Link>
                     </Form>
-                    <p onClick={() => { setShowForm(true) }}> Si no estás registrado haz click aquí</p>
+                    <p className="linkToogle" onClick={() => { setShowForm(true) }}> Si no estás registrado haz click aquí</p>
                 </Modal.Body>
             </Modal.Dialog>
         </Modal>
