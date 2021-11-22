@@ -5,7 +5,8 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import app from '../../firebase/firebaseconfig';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword
+} from "firebase/auth";
 
 
 
@@ -50,22 +51,21 @@ const ModalLogin = ({ showModal, setShowModal }) => {
             });
     }
 
-
-
-    const authenticator = () => {
+    const loginUser = (e, emailUser, passwordUser) => {
+        e.preventDefault();
         console.log(emailUser, passwordUser);
-        console.log(datos);
         const auth = getAuth();
-        createUserWithEmailAndPassword(auth, emailUser, passwordUser)
+        signInWithEmailAndPassword(auth, emailUser, passwordUser)
             .then((userCredential) => {
                 // Signed in
                 const user = userCredential.user;
-                console.log(user);
+                console.log(user, "logueo");
                 // ...
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                console.log(error);
                 // ..
             });
 
@@ -113,16 +113,16 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                         <Modal.Title>Ingreso</Modal.Title>
                     </Modal.Header>
                     <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-3" controlId="formBasicEmailLogin">
                             <Form.Label>Correo electrónico</Form.Label>
-                            <Form.Control type="email" placeholder="Correo electrónico" />
+                            <Form.Control type="email" value={emailUser} onChange={(e) => { setEmailUser(e.target.value) }} placeholder="Correo electrónico" />
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-3" controlId="formBasicPasswordLogin">
                             <Form.Label>Contraseña</Form.Label>
-                            <Form.Control type="password" value={passwordUser} placeholder="Contraseña" />
+                            <Form.Control type="password" value={passwordUser} onChange={(e) => { setPasswordUser(e.target.value) }} placeholder="Contraseña" />
                         </Form.Group>
                         <Link to="/tables">
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" type="submit" onClick={(e) => { loginUser(e, emailUser, passwordUser, valueName) }}>
                                 Enviar
                             </Button>
                         </Link>
