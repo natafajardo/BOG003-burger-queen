@@ -52,7 +52,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                 const loginError = error.code;
                 switch (loginError) {
                     case 'auth/wrong-password':
-                        //setErr('La contraseña no es válida!');
+                        setErr('La contraseña no es válida!');
                         console.log('No es la contraseña{err}');
                         break;
 
@@ -67,7 +67,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                         break;
 
                     case 'auth/too-many-requests':
-                        setErr('Muchas solicitudes erroneas!');
+                        setErr('Ha excedido las solicitudes de ingreso, intenta más tarde!');
                         console.log({err});
                         break;
 
