@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import './ModalLogin.css'
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import './ModalLogin.css';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import app from '../../firebase/firebaseconfig';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword
 } from "firebase/auth";
@@ -13,26 +13,11 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword
 const ModalLogin = ({ showModal, setShowModal }) => {
 
     const [valueName, setValueName] = useState('');
-    const [valueEmail, setValueEmail] = useState('');
-    const [valuePassword, setValuePassword] = useState('');
     const [showForm, setShowForm] = useState(false);
     const [emailUser, setEmailUser] = useState('');
     const [passwordUser, setPasswordUser] = useState('');
-    const [datos, setDatos] = useState({
-        email: '',
-        password: ''
-    })
-    /* 
-        const handleInputChange = (event) => {
-            // console.log(event.target.name)
-            console.log(event.target.value)
-            setDatos({
-                ...datos,
-                [event.target.name] : event.target.value
-            })
-        } */
-
-    // const firebaseApp = app;
+    const [err, setErr] = useState('');
+ 
     const sendData = (e, emailUser, passwordUser, valueName) => {
         e.preventDefault();
         console.log("joan te amo 100", emailUser, passwordUser, valueName);
@@ -63,10 +48,27 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                 // ...
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
                 console.log(error);
-                // ..
+                switch (error) {
+                    case 'auth/wrong-password':
+                        //setErr('La contraseña no es válida!');
+                        console.log('No es la contraseña{err}');
+                        break;
+
+                    case 'auth/user-not-found':
+                        setErr('El usuario no esta registrado!');
+                        console.log({err});
+                        break;
+
+                    case 'auth/invalid-email':
+                        setErr('No corresponde a un correo electrónico!');
+                        console.log({err});
+                        break;
+
+                    default:
+                        break;
+                }
+
             });
 
     }
@@ -128,6 +130,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                         </Link>
                     </Form>
                     <p className="linkToogle" onClick={() => { setShowForm(true) }}> Si no estás registrado haz click aquí</p>
+                    <p>{err}</p>
                 </Modal.Body>
             </Modal.Dialog>
         </Modal>
