@@ -5,7 +5,8 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import app from '../../firebase/firebaseconfig';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword
+import {
+    getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword
 } from "firebase/auth";
 
 
@@ -17,15 +18,17 @@ const ModalLogin = ({ showModal, setShowModal }) => {
     const [emailUser, setEmailUser] = useState('');
     const [passwordUser, setPasswordUser] = useState('');
     const [err, setErr] = useState('');
- 
+
     const sendData = (e, emailUser, passwordUser, valueName) => {
         e.preventDefault();
         console.log("joan te amo 100", emailUser, passwordUser, valueName);
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, emailUser, passwordUser)
-            .then(async(userCredential) => {
+            .then(async (userCredential) => {
                 const user = userCredential.user;
+
                 setShowModal(false);
+                
                 // ...
             })
             .catch((error) => {
@@ -33,7 +36,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                 const errorMessage = error.message;
                 console.log(error);
                 // ..
-                
+
             });
     }
 
@@ -46,7 +49,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                 // Signed in
                 const user = userCredential.user;
                 console.log(user, "logueo");
-                window.location.pathname= '/tables';
+                window.location.pathname = '/tables';
                 // ...
             })
             .catch((error) => {
@@ -60,17 +63,17 @@ const ModalLogin = ({ showModal, setShowModal }) => {
 
                     case 'auth/user-not-found':
                         setErr('El usuario no esta registrado!');
-                        console.log({err});
+                        console.log({ err });
                         break;
 
                     case 'auth/invalid-email':
                         setErr('No corresponde a un correo electrónico!');
-                        console.log({err});
+                        console.log({ err });
                         break;
 
                     case 'auth/too-many-requests':
                         setErr('Ha excedido las solicitudes de ingreso, intenta más tarde!');
-                        console.log({err});
+                        console.log({ err });
                         break;
 
                     default:

@@ -1,3 +1,23 @@
-.order{
-  color: white;
+.btn-Order-list {
+  cursor: pointer;
+  background: transparent;
+  border: none;
 }
+
+.table-dark {
+  --bs-table-bg: #212529;
+  --bs-table-striped-color: #fff;
+  --bs-table-active-bg: #373b3e;
+  --bs-table-active-color: #fff;
+  --bs-table-hover-bg: #323539;
+  --bs-table-hover-color: #fff;
+  color: #fff;
+  border-color: #373b3e;
+}
+
+tbody, td, tfoot, th, thead, tr {
+  border-color: none;
+  border-style: none;
+  border-width: none;
+}
+
