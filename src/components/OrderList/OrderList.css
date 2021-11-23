@@ -23,5 +23,5 @@ tbody, td, tfoot, th, thead, tr {
 
 
 .table-striped>tbody>tr:nth-of-type(odd)>* {
-  --bs-table-accent-bg: #3A1D89;
+  --bs-table-accent-bg: #241255;
 }

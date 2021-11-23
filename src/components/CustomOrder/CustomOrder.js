@@ -2,9 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import './CustomOrder.css';
 
-const CustomOrder = ({ setToogleOrder, firstTitle, items, onClickOk }) => {
-  console.log(items);
+const CustomOrder = ({ setToogleOrder, firstTitle, items, setOrder, order, onClickOk }) => {
+  //console.log(items);
   const [count, setCount] = useState(1);
+  //const [product, setProduct] = useState({});
 
   const addSelection = (item) => {
     console.log(item);
@@ -36,7 +37,14 @@ const CustomOrder = ({ setToogleOrder, firstTitle, items, onClickOk }) => {
         {items[0].add.map((item, index) => {
           return (
             <div className="recipe-items" key={index}>
-              <input type="checkbox" value={item} onChange={() => { }} />
+              <input type="checkbox" value={item} name="add" onChange={(e) => { 
+                if(e.target.checked === true){
+                  setOrder(order => {
+                    return {...order, add: {item} }
+                  })
+                  console.log(order);
+                }
+               }} />
               <p>{item.toUpperCase()}</p>
             </div>
           )
@@ -45,11 +53,11 @@ const CustomOrder = ({ setToogleOrder, firstTitle, items, onClickOk }) => {
       <div className="style-space" ></div>
       <div className="additions">
         <div className="circleAdd" onClick={() => { count > 1 && setCount(count - 1) }}>
-          <p className="content"> {"-"} </p>
+          <span className="content"> {"-"} </span>
         </div>
         <span> {count} </span>
         <div className="circleAdd" onClick={() => { setCount(count + 1) }} >
-          <p className="content"> {"+"} </p>
+          <span className="content"> {"+"} </span>
         </div>
       </div>
       <div className="style-space"></div>
@@ -59,7 +67,7 @@ const CustomOrder = ({ setToogleOrder, firstTitle, items, onClickOk }) => {
           setToogleOrder(false);
         }}>
           <img className="btnCustomImg" src="./images/ok.png" alt="confirmar" />
-          <p className="btnAñadirCustom">Añadir</p>
+          Añadir
         </button>
       </div>
     </div>
@@ -67,3 +75,11 @@ const CustomOrder = ({ setToogleOrder, firstTitle, items, onClickOk }) => {
 }
 
 export default CustomOrder;
+
+/* 
+<input type="checkbox" value={item} onChange={() => { 
+                  setOrder(order => {
+                    return {...order, add: {item} }
+                  })
+                console.log(order);
+               }} /> */

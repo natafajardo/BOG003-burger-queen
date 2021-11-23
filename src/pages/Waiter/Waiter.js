@@ -22,13 +22,17 @@ const Waiter = () => {
   const [subcategories, setSubcategories] = useState([]);
   const [activeSubcategory, setActiveSubcategory] = useState("");
   const [menuItems, setMenuItems] = useState([]);
-  const [tables, setTables] = useState([]);
   const [placeholder, setPlaceholder] = useState("Selecciona una mesa");
   const [idProduct, setIdProduct] = useState("");
   const [itemTitle, setItemTitle] = useState("");
   const [toogleOrder, setToogleOrder] = useState(false);
-  const [order, setOrder] = useState([]);
-  const [btnOrderCocina,setBtnOrderCocina] = useState([])
+  const [btnOrderCocina,setBtnOrderCocina] = useState([]);
+  const [order, setOrder] = useState({
+    amount: 0,
+    item: '',
+    price: 0,
+    add: ''
+  });
 
   const filterSubcategories = (category) => {
     setActiveCategory(category);
@@ -54,9 +58,7 @@ const Waiter = () => {
     }
   }
 
-  const onClickOk = (count, product) => {
 
-  }
 
   return (
     <div className="container">
@@ -79,9 +81,10 @@ const Waiter = () => {
             <CustomOrder
               id={idProduct}
               setToogleOrder={setToogleOrder}
+              order={order}
+              setOrder= {setOrder}
               firstTitle={itemTitle}
-              items={items.filter(item => filterData(item))}
-              onClickOk={onClickOk} setOrder={setOrder} /> : null}
+              items={items.filter(item => filterData(item))} /> : null}
           </div>
         </div>
         <div className="pedido">
@@ -91,7 +94,7 @@ const Waiter = () => {
             filterItems={changePlaceholder}
           />
           <aside>
-            <OrderList></OrderList>
+            <OrderList order={order} ></OrderList>
             <ButtonAddOrder message={"Joan Te amo"}/>
           </aside>
         </div>

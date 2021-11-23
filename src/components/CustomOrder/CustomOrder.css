@@ -89,8 +89,6 @@ h4, ul {
 }
 
 .btnCustom {
-  background-color:none;
-  border:none;
   border: none;
   background-color: transparent;
   color: white;
@@ -98,8 +96,8 @@ h4, ul {
   display: flex;
   flex-flow: row;
   justify-content: center;
+  align-items: center;
   margin-right: 30px;
-  cursor: pointer;
 }
 
 .btnCustomImg {
@@ -114,13 +112,14 @@ h4, ul {
   justify-content: center;
   align-items: center;
   font-size: 24pt;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border: 3px solid white;
   border-radius: 50%;
   box-shadow: 2px 5px 5px rgb(52 3 45 / 27%);
+  cursor: pointer;
 }
 
-.btnAñadirCustom {
+.btnAddCustom {
   display: flex;
 }
