@@ -59,7 +59,7 @@ const CustomOrder = ({ setToogleOrder, firstTitle, items, onClickOk }) => {
           setToogleOrder(false);
         }}>
           <img className="btnCustomImg" src="./images/ok.png" alt="confirmar" />
-          <p>Añadir</p>
+          <p className="btnAñadirCustom">Añadir</p>
         </button>
       </div>
     </div>
