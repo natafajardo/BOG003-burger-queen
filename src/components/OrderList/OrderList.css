@@ -1,27 +1,47 @@
-.btn-Order-list {
+.order-list {
+  margin-bottom: 10px;
+}
+
+.order-list ul {
+  padding: 0;
+  margin: 0;
+}
+
+.order-list ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.order-list ul li .btn-Order-list {
   cursor: pointer;
   background: transparent;
   border: none;
+  flex:1
 }
 
-.table-dark {
-  --bs-table-bg: #160E31;
-  --bs-table-striped-color: #fff;
-  --bs-table-active-bg: #160E31;
-  --bs-table-active-color: #fff;
-  --bs-table-hover-bg: #2e58e2;
-  --bs-table-hover-color: #fff;
-  color: #fff;
-  border-color: #160E31;
+.order-list ul li .amount {
+  flex: 1;
+  text-align: center;
 }
 
-tbody, td, tfoot, th, thead, tr {
-  border-color: none;
-  border-style: none;
-  border-width: none;
+.order-list ul li .title {
+  flex: 3;
 }
 
+.order-list ul li .price {
+  flex: 2;
+  text-align: center;
+}
 
-.table-striped>tbody>tr:nth-of-type(odd)>* {
-  --bs-table-accent-bg: #241255;
+.order-list ul li .textos .text-item {
+  padding: 0 2px;
+}
+
+.order-list .total {
+  display: flex;
+  justify-content: center;
 }

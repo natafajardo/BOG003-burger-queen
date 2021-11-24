@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import './CustomOrder.css';
+import OrderContext from '../../context/OrderContext';
 
 const CustomOrder = ({ setToogleOrder, firstTitle, items, setOrder, order, onClickOk }) => {
-  //console.log(items);
+  const { dispatchProductEvent } = useContext(OrderContext);
   const [count, setCount] = useState(1);
-  //const [product, setProduct] = useState({});
-
-  const addSelection = (item) => {
-    console.log(item);
+  
+  const addProduct = (item) => {
+    const { title, price } = { ...item };
+    const product = { title, price };
+    product.amount = count;
+    dispatchProductEvent('ADD_PRODUCT', { newProduct: product });
   }
 
   return (
@@ -37,14 +40,14 @@ const CustomOrder = ({ setToogleOrder, firstTitle, items, setOrder, order, onCli
         {items[0].add.map((item, index) => {
           return (
             <div className="recipe-items" key={index}>
-              <input type="checkbox" value={item} name="add" onChange={(e) => { 
-                if(e.target.checked === true){
+              <input type="checkbox" value={item} name="add" onChange={(e) => {
+                if (e.target.checked === true) {
                   setOrder(order => {
-                    return {...order, add: {item} }
+                    return { ...order, add: { item } }
                   })
                   console.log(order);
                 }
-               }} />
+              }} />
               <p>{item.toUpperCase()}</p>
             </div>
           )
@@ -63,7 +66,7 @@ const CustomOrder = ({ setToogleOrder, firstTitle, items, setOrder, order, onCli
       <div className="style-space"></div>
       <div className="btnCloseCustom">
         <button className="btnCustom" onClick={() => {
-          addSelection(items[0]);
+          addProduct(items[0]);
           setToogleOrder(false);
         }}>
           <img className="btnCustomImg" src="./images/ok.png" alt="confirmar" />
@@ -75,11 +78,3 @@ const CustomOrder = ({ setToogleOrder, firstTitle, items, setOrder, order, onCli
 }
 
 export default CustomOrder;
-
-/* 
-<input type="checkbox" value={item} onChange={() => { 
-                  setOrder(order => {
-                    return {...order, add: {item} }
-                  })
-                console.log(order);
-               }} /> */

@@ -1,43 +1,43 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './OrderList.css';
-import Table from 'react-bootstrap/Table';
+
+import OrderContext from '../../context/OrderContext';
 
 const OrderList = () => {
+  const { dispatchProductEvent } = useContext(OrderContext);
+  const { order } = useContext(OrderContext);
+
+  const removeProduct = (item) => {
+    dispatchProductEvent('REMOVE_PRODUCT', { productTitle: item.title });
+  }
+
+  let totalPrice = 0;
   return (
-    <div>
-      <Table striped bordered hover variant="dark" className="order-table">
-  <thead>
-    <tr className="Order-list">
-      <th>Cantidad</th>
-      <th>Producto</th>
-      <th>Precio</th>
-      <th>
-        <button className="btn-Order-list">
-          <img src="./images/trash.png" alt="" />
-        </button>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</Table>
+    <div className="order-list">
+      <ul>
+        {order.map((item, index) => {
+          totalPrice += item.price * item.amount;
+          return (
+            <li key={index}>
+              <div className="amount">
+              <span className="text-item">{item.amount}</span>
+              </div>
+              <div className="title">
+                <span className="text-item">{item.title}</span>
+              </div>
+              <div className="price">
+              <span className="text-item">{item.price * item.amount}</span>
+              </div>
+              <button className="btn-Order-list" onClick={() => { removeProduct(item) }}>
+                <img src="./images/trash.png" alt="" />
+              </button>
+            </li>
+          )
+        })}
+        <div className="total">
+          <strong>Total: {totalPrice}</strong>
+        </div>
+      </ul>
     </div>
   )
 }

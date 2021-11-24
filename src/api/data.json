@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Sandwich de jamón y queso",
-    "price": "3000",
+    "price": 3000,
     "category": "DESAYUNO",
     "subcategory": "Sandwiches",
     "remove": [
@@ -19,7 +19,7 @@
   {
     "id": 2,
     "title": "Sandwich de pollo",
-    "price": "3000",
+    "price": 3000,
     "category": "DESAYUNO",
     "subcategory": "Sandwiches",
     "remove": [
@@ -37,7 +37,7 @@
   {
     "id": 3,
     "title": "Sandwich de atún",
-    "price": "3000",
+    "price": 3000,
     "category": "DESAYUNO",
     "subcategory": "Sandwiches",
     "remove": [
@@ -54,7 +54,7 @@
   {
     "id": 4,
     "title": "Chocolate",
-    "price": "2000",
+    "price": 2000,
     "category": "DESAYUNO",
     "subcategory": "Bebidas-calientes",
     "remove": ["azúcar"],
@@ -74,7 +74,7 @@
   {
     "id": 6,
     "title": "Café americano",
-    "price": "2000",
+    "price": 2000,
     "category": "DESAYUNO",
     "subcategory": "Bebidas-calientes",
     "remove": ["azúcar"],
@@ -104,7 +104,7 @@
   {
     "id": 8,
     "title": "Hamburguesa con pollo",
-    "price": "8500",
+    "price": 8500,
     "category": "COMIDAS RÁPIDAS",
     "subcategory": "Hamburguesas",
     "remove": [
@@ -124,7 +124,7 @@
   {
     "id": 9,
     "title": "Papas a la francesa",
-    "price": "3500",
+    "price": 3500,
     "category": "COMIDAS RÁPIDAS",
     "subcategory": "Guarniciones",
     "remove": [],
@@ -138,7 +138,7 @@
   {
     "id": 10,
     "title": "Aros de cebolla",
-    "price": "3500",
+    "price": 3500,
     "category": "COMIDAS RÁPIDAS",
     "subcategory": "Guarniciones",
     "remove": [],
@@ -152,7 +152,7 @@
   {
     "id": 11,
     "title": "Jugo de naranja",
-    "price": "2500",
+    "price": 2500,
     "category": "COMIDAS RÁPIDAS",
     "subcategory": "Bebidas",
     "remove": ["azúcar"],
@@ -162,7 +162,7 @@
   {
     "id": 12,
     "title": "Jugo de mora",
-    "price": "2500",
+    "price": 2500,
     "category": "COMIDAS RÁPIDAS",
     "subcategory": "Bebidas",
     "remove": ["azúcar"],
@@ -172,7 +172,7 @@
   {
     "id": 13,
     "title": "Agua",
-    "price": "2000",
+    "price": 2000,
     "category": "COMIDAS RÁPIDAS",
     "subcategory": "Bebidas",
     "remove": [],
@@ -182,7 +182,7 @@
   {
     "id": 14,
     "title": "Coca-cola",
-    "price": "2500",
+    "price": 2500,
     "category": "COMIDAS RÁPIDAS",
     "subcategory": "Bebidas",
     "remove": [],
