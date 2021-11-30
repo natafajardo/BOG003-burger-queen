@@ -86,15 +86,6 @@ const ModalLogin = ({ showModal, setShowModal }) => {
 
 
     return (
-        /*         <div>
-                <label htmlFor="email">Mail </label>
-                <input type="email" name='email' id="email" onChange={(e) => setEmailUser(e.target.value)} /> <br />
-                <label htmlFor="pass">Pass </label>
-                <input type="password" name="pass" id="pass" onChange={(e) => setPasswordUser(e.target.value)} /> <br />
-                <button type="button" onClick={authenticator}>Registrar usuario</button> */
-
-
-
         <Modal show={showModal}>
             <Modal.Dialog>
 

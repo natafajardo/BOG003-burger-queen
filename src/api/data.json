@@ -84,7 +84,7 @@
   {
     "id": 7,
     "title": "Hamburguesa con queso",
-    "price": "8000",
+    "price": 8000,
     "category": "COMIDAS RÁPIDAS",
     "subcategory": "Hamburguesas",
     "remove": [

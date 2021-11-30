@@ -45,3 +45,38 @@
   display: flex;
   justify-content: center;
 }
+
+.guest {
+  margin: 10px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guest input {
+  background: #241743;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.guest button {
+  background: #160E31;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.guest-name {
+  margin: 20px 0 20px 0;
+}
+
+.guest-name .gname {
+  color: #ccc;
+}
+
+.hide {
+  display: none;
+}

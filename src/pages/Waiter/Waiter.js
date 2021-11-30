@@ -9,7 +9,6 @@ import Subcategories from "../../components/Subcategories/Subcategories";
 import Menu from "../../components/Menu/Menu";
 import Header from "../../components/Header/Header";
 import CustomOrder from "../../components/CustomOrder/CustomOrder";
-import ButtonAddOrder from "../../components/ButtonAddOrder/ButtonAddOrder";
 import OrderList from "../../components/OrderList/OrderList";
 
 
@@ -26,6 +25,7 @@ const Waiter = () => {
   const [idProduct, setIdProduct] = useState("");
   const [itemTitle, setItemTitle] = useState("");
   const [toogleOrder, setToogleOrder] = useState(false);
+  const [selectedTable, setSelectedTable] = useState();
   const [btnOrderCocina,setBtnOrderCocina] = useState([]);
   const [order, setOrder] = useState({
     amount: 0,
@@ -50,6 +50,7 @@ const Waiter = () => {
 
   const changePlaceholder = (table) => {
     setPlaceholder(table);
+    setSelectedTable(table);
   }
 
   const filterData = (item) =>{
@@ -94,8 +95,7 @@ const Waiter = () => {
             filterItems={changePlaceholder}
           />
           <aside>
-            <OrderList order={order} ></OrderList>
-            <ButtonAddOrder message={"Joan Te amo"}/>
+            <OrderList table={selectedTable} ></OrderList>
           </aside>
         </div>
       </main>

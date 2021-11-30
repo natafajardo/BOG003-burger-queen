@@ -10,17 +10,28 @@
   align-items: center;
   border:none;
   cursor: pointer;
+  margin-top: 20px;
+}
+
+.btnOrderCocina.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
 }
 
 .btnOrderCocina:hover {
   background-color: #537CED;
 }
 
+.btnOrderCocina:hover.disabled {
+  opacity: 0.2;
+  background: #160e31;
+}
+
 .btnOrderCocina h1 {
   color:white;
 }
 
-.titleBtn{
+.titleBtn {
   font-size: 20px;
   color: white;
 }
