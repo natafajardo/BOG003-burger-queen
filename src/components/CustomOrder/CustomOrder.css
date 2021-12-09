@@ -97,12 +97,11 @@ h4, ul {
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  margin-right: 30px;
+  padding: 15px;
 }
 
 .btnCustomImg {
   width: 15px;
-  margin-top: 15px;
   margin-right: 5px;
 
 }
