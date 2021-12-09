@@ -9,7 +9,7 @@ import { collection, addDoc } from "firebase/firestore";
 const orderid = require('order-id')('key');
 
 const OrderList = ({ table }) => {
-  const newOrder = { table };
+  let newOrder = { table };
   const { dispatchProductEvent } = useContext(OrderContext);
   const { order } = useContext(OrderContext);
   const [inputGuest, setInputGuest] = useState('');
@@ -28,20 +28,28 @@ const OrderList = ({ table }) => {
     newOrder.guest = inputGuest;
     newOrder.products = order;
     let orderPrice = 0;
+
     if (order.length > 1) {
       orderPrice = order.reduce((acc, cur) => (acc.price * acc.amount) + (cur.price * cur.amount));
     } else {
       orderPrice = order[0].price;
     }
+
     newOrder.price = orderPrice;
     newOrder.orderId = id;
     console.log(newOrder);
+
     try {
       const docRef = await addDoc(collection(db, 'orders'), newOrder);
       console.log("Document written with ID: ", docRef.id);
+      dispatchProductEvent('CLEAN_ORDER');
+      newOrder = { };
+      setInputGuest('');
+      setHideInput(false);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
+
   }
 
   let totalPrice = 0;
@@ -49,13 +57,16 @@ const OrderList = ({ table }) => {
   return (
     <div className="order-list">
       <div className={`guest ${hideInput ? 'hide' : ''}`}>
-        <input onChange={e => setInputGuest(e.target.value)} type="text" placeholder="Nombre del cliente" />
+        <input onChange={e => setInputGuest(e.target.value)} value={inputGuest} type="text" placeholder="Nombre del cliente" />
         <button onClick={addGuest}>Agregar Cliente</button>
       </div>
 
       <div className={`guest-name ${!hideInput ? 'hide' : ''}`}>
-        <span className="label">Cliente:&nbsp;</span>
-        <span className="gname">{inputGuest}</span>
+        <div className="info">
+          <span className="label">Cliente:&nbsp;</span>
+          <span className="gname">{inputGuest}</span>
+        </div>
+        <button onClick={e => setHideInput(false)}>Editar</button>
       </div>
 
       <ul className="product-list">
@@ -82,7 +93,7 @@ const OrderList = ({ table }) => {
           <strong>Total: {totalPrice}</strong>
         </div>
       </ul>
-      <ButtonAddOrder emmitEvent={sendOrder} disabled={!newOrder.table && !newOrder.guest} />
+      <ButtonAddOrder emmitEvent={sendOrder} disabled={!newOrder.table || !hideInput} />
     </div>
   )
 }

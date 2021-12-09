@@ -18,6 +18,9 @@ const App = () => {
 			case 'REMOVE_PRODUCT':
 				setOrder(order.filter(item => item.title !== payload.productTitle));
 				return;
+			case 'CLEAN_ORDER':
+				setOrder([]);
+				return;
 			default:
 				return;
 		}

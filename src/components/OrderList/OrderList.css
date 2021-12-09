@@ -71,10 +71,21 @@
 
 .guest-name {
   margin: 20px 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .guest-name .gname {
   color: #ccc;
+}
+
+.guest-name button {
+  background: #160E31;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .hide {
